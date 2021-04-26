@@ -33,14 +33,31 @@ function findOrAdd(rootNode, newNode) {
     }
 }
 
-
+// left, middle, right
 function inOrder(currentNode) {
     if (currentNode.left) {
         inOrder(currentNode.left)
     }
     console.log(data)
-
     if (currentNode.right){
         inOrder(curentNode.right)
+    }
+}
+
+// middle, left, right
+function preOrder(curentNode) {
+    if (currentNode) {
+        console.log(currentNode)
+        preOrder(currentNode.left)
+        preOrder(currentNode.right)
+    }
+}
+
+//left, right, middle
+function postOrder(currentNode) {
+    if (currentNode) {
+        postOrder(currentNode.left)
+        postOrder(currentNode.right)
+        console.log(currentNode)
     }
 }
