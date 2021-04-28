@@ -61,3 +61,26 @@ function postOrder(currentNode) {
         console.log(currentNode)
     }
 }
+
+// maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+// 1. If tree is empty then return 0
+// 2. Else
+//      (a) Get the max depth of left subtree recursively  i.e., 
+//           call maxDepth( tree->left-subtree)
+//      (a) Get the max depth of right subtree recursively  i.e., 
+//           call maxDepth( tree->right-subtree)
+//      (c) Get the max of max depths of left and right 
+//           subtrees and add 1 to it for the current node.
+//          max_depth = max(max dept of left subtree,  
+//                              max depth of right subtree) 
+//                              + 1
+//      (d) Return max_depth
+
+function maxDepth(root) {
+    if (root){
+        let left = maxDepth(root.left)
+        let right = maxDepth(root.right)
+        let max = left > right ? (left + 1) : (right +1)
+        return max
+} else {return 0}
+}
