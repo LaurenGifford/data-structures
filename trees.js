@@ -33,6 +33,17 @@ function findOrAdd(rootNode, newNode) {
     }
 }
 
+// non-recursive search function
+function searchBST(node, val) {
+    while (node) {
+        if (val < node.val) node = node.left 
+        else if (val > node.val) node = node.right
+        else return node
+    }
+   return node
+};
+
+
 // left, middle, right
 function inOrder(currentNode) {
     if (currentNode.left) {
