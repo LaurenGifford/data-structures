@@ -93,5 +93,25 @@ function maxDepth(root) {
         let right = maxDepth(root.right)
         let max = left > right ? (left + 1) : (right +1)
         return max
-} else {return 0}
+    } else {return 0}
 }
+
+
+// The diameter of a binary tree is the length of the longest path between any two nodes 
+// in a tree. This path may or may not pass through the root.
+
+function diameterOfBinaryTree(root) {
+    let longest = 0
+    getHeight(root)
+    return longest
+
+    function getHeight(root) {
+        if (root) {
+            let left = getHeight(root.left)
+            let right = getHeight(root.right)
+            longest = Math.max(longest, left + right) 
+            return Math.max(left, right) + 1
+        } else {return 0}
+    }
+
+};
