@@ -16,22 +16,29 @@
 // }
 
 // CORRECT
+
+
 function findOrAdd(rootNode, newNode) {
-    let currentNode = rootnode.data
-    if (newNode.data < rootNode.data) {
+    let currentNode = rootNode.data
+
+    if (currentNode === newNode.data) return currentNode
+
+    if (newNode.data < currentNode) {
         currentNode = rootNode.left
         if (currentNode) {
             findOrAdd(currentNode, newNode)
         }
         else {currentNode.left = newNode}
     }
-    else if (newNode.data > rootNode.data) {
+    else if (newNode.data > currentNode) {
         currentNode = rootNode.right
         if (currentNode) {
             findOrAdd(currentNode, newNode)
         } else {currentNode.right = newNode}
     }
 }
+
+
 
 // non-recursive search function
 function searchBST(node, val) {
